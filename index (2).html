@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>담토스킨케어 김혜지 | 피부관리사 김옹쟝</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F7F3EC; --cocoa:#4A3A30; --gold:#B08D57; --sand:#EDE4D6;
+    --text:#3A2E26; --muted:#8A7A6C; --card:#FFFFFF; --line:#E6DCCD;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#6B5444;font-family:'Noto Sans KR',sans-serif;color:var(--text);min-height:100vh;
+       display:flex;justify-content:center;padding:24px 0}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:440px;background:var(--ivory);border-radius:28px;overflow:hidden;
+        box-shadow:0 20px 60px rgba(0,0,0,.25)}
+  @media(max-width:480px){body{padding:0}.wrap{border-radius:0}}
+
+  /* 상단 흐르는 공지 */
+  .marquee{background:var(--cocoa);color:var(--ivory);font-size:13px;font-weight:500;
+           white-space:nowrap;overflow:hidden;padding:9px 0}
+  .marquee span{display:inline-block;padding-left:100%;animation:flow 22s linear infinite}
+  @keyframes flow{to{transform:translateX(-100%)}}
+
+  /* 커버 */
+  .cover{height:170px;position:relative;
+    background:
+      radial-gradient(circle at 20% 30%,rgba(255,255,255,.35) 0 40px,transparent 41px),
+      radial-gradient(circle at 80% 70%,rgba(255,255,255,.18) 0 70px,transparent 71px),
+      linear-gradient(135deg,#C9A97A 0%,#8C6B4F 55%,#4A3A30 100%)}
+  .cover .tag{position:absolute;left:18px;top:16px;font-family:'Noto Serif KR',serif;color:#fff;
+              font-size:12px;letter-spacing:.25em;opacity:.9}
+  .share{position:absolute;right:16px;top:14px;width:34px;height:34px;border-radius:50%;border:none;
+         background:rgba(255,255,255,.85);cursor:pointer;display:grid;place-items:center}
+  .avatar{width:96px;height:96px;border-radius:50%;margin:-48px auto 0;position:relative;
+          background:var(--cocoa);border:4px solid var(--ivory);display:grid;place-items:center;
+          font-family:'Noto Serif KR',serif;color:var(--gold);font-size:26px;font-weight:700}
+
+  .profile{text-align:center;padding:12px 24px 0}
+  .profile h1{font-size:20px;font-weight:700;color:var(--cocoa)}
+  .profile .sub{font-size:12.5px;color:var(--gold);font-weight:500;margin-top:3px;letter-spacing:.02em}
+  .profile p{font-size:13.5px;line-height:1.6;margin-top:10px;color:var(--text)}
+
+  .socials{display:flex;justify-content:center;gap:16px;margin:16px 0 14px}
+  .socials a{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);
+             display:grid;place-items:center;transition:.2s}
+  .socials a:hover{background:var(--cocoa);color:var(--ivory)}
+  .socials svg{width:19px;height:19px}
+  .socials .txt{font-weight:700;font-size:13px}
+
+  .cta{display:flex;gap:8px;justify-content:center;padding:0 24px}
+  .btn{flex:1;max-width:180px;padding:11px 0;border-radius:14px;font-size:13.5px;font-weight:700;
+       border:1px solid var(--cocoa);cursor:pointer;font-family:inherit;text-align:center}
+  .btn.main{background:var(--cocoa);color:var(--ivory)}
+  .btn.sub{background:transparent;color:var(--cocoa)}
+
+  .search{margin:20px 18px 6px;position:relative}
+  .search input{width:100%;padding:13px 16px 13px 42px;border-radius:14px;border:1px solid var(--line);
+                background:#fff;font-size:14px;font-family:inherit;outline:none}
+  .search input:focus{border-color:var(--gold)}
+  .search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:17px;color:var(--muted)}
+
+  section{padding:26px 18px 4px}
+  .sec-head{text-align:center;margin-bottom:14px}
+  .sec-head h2{font-size:16px;font-weight:700;color:var(--cocoa)}
+  .sec-head h2 b{color:var(--gold)}
+  .sec-head p{font-size:12.5px;color:var(--muted);margin-top:4px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+  .card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);
+        transition:transform .2s;display:block}
+  .card:hover{transform:translateY(-3px)}
+  .thumb{aspect-ratio:1/1;position:relative;display:flex;align-items:flex-end;padding:9px;
+         font-family:'Noto Serif KR',serif;color:#fff;font-size:15px;font-weight:700;line-height:1.25}
+  .thumb small{position:absolute;left:8px;top:8px;font-family:'Noto Sans KR';font-size:10px;font-weight:700;
+               background:rgba(255,255,255,.9);color:var(--cocoa);padding:2px 7px;border-radius:20px}
+  .card .label{font-size:12.5px;font-weight:500;text-align:center;padding:9px 6px;line-height:1.35;
+               min-height:48px;display:grid;place-items:center}
+
+  .t1{background:linear-gradient(150deg,#D8C3A5,#9C7B5C)}
+  .t2{background:linear-gradient(150deg,#B08D57,#6F5236)}
+  .t3{background:linear-gradient(150deg,#7A6252,#3E3029)}
+  .t4{background:linear-gradient(150deg,#C7B39B,#857261)}
+  .t5{background:linear-gradient(150deg,#E2CFB3,#B08D57)}
+  .t6{background:linear-gradient(150deg,#5E4A3D,#2E241E)}
+
+  .list{display:flex;flex-direction:column;gap:9px}
+  .row{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);
+       border-radius:14px;padding:12px 14px;transition:.2s}
+  
+  .row .ic{width:40px;height:40px;border-radius:11px;flex-shrink:0;display:grid;place-items:center;
+           font-family:'Noto Serif KR',serif;font-weight:700;color:#fff;font-size:14px}
+  .row h3{font-size:14px;font-weight:700}
+  .row p{font-size:12px;color:var(--muted);margin-top:2px}
+  .row .arr{margin-left:auto;color:var(--gold);font-size:18px}
+
+  .about{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+  .about li{list-style:none;font-size:13px;line-height:1.55;padding:7px 0 7px 16px;position:relative;
+            border-bottom:1px dashed var(--line)}
+  .about li:last-child{border:none}
+  .about li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;
+                    background:var(--gold)}
+  .about li b{color:var(--cocoa)}
+
+  .hide{display:none!important}
+  .empty{text-align:center;font-size:13px;color:var(--muted);padding:20px 0}
+
+  footer{text-align:center;padding:30px 20px 34px;font-size:11.5px;color:var(--muted);line-height:1.7}
+  footer b{font-family:'Noto Serif KR',serif;color:var(--cocoa);font-size:13px}
+
+  /* 모달 */
+  .modal{position:fixed;inset:0;background:rgba(30,22,17,.55);display:none;align-items:center;
+         justify-content:center;padding:20px;z-index:10}
+  .modal.on{display:flex}
+  .box{background:var(--ivory);border-radius:20px;padding:24px;max-width:360px;width:100%}
+  .box h3{font-size:17px;color:var(--cocoa);margin-bottom:6px}
+  .box p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+  .box .item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;
+             font-size:13px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .box .item span{word-break:break-all}
+  .box .item button{border:none;background:var(--cocoa);color:#fff;border-radius:8px;padding:5px 10px;
+                    font-size:12px;cursor:pointer;font-family:inherit;flex-shrink:0}
+  .box .close{width:100%;margin-top:8px}
+  .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:var(--cocoa);color:#fff;
+         padding:9px 18px;border-radius:30px;font-size:13px;opacity:0;transition:.3s;pointer-events:none;z-index:20}
+  .toast.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="marquee"><span>
+    미용학박사 · 16년차 피부관리사가 직접 관리합니다 ✦ 대학 출강 · KCI 논문 14편+ 연구하는 원장의 1:1 프라이빗 케어 ✦ 검단신도시 담토스킨케어 ✦ 페이스 관리 10회 이상 등록 시 LDM 물방울 초음파 서비스 ✦ 네이버 예약 오픈
+  </span></div>
+
+  <div class="cover">
+    <div class="tag">DAMTO SKINCARE</div>
+    <button class="share" id="shareBtn" aria-label="링크 복사">
+      <svg viewBox="0 0 24 24" width="17" fill="none" stroke="#4A3A30" stroke-width="2"><path d="M12 3v12M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>
+    </button>
+  </div>
+  <div class="avatar">담토</div>
+
+  <div class="profile">
+    <h1>김혜지 원장</h1>
+    <div class="sub">피부관리사 김옹쟝 · 미용학박사 김혜지</div>
+    <p>16년차 피부관리사이자 미용학 박사<br>검단신도시 1인 프라이빗 스킨케어 <b>담토스킨케어</b></p>
+  </div>
+
+  <div class="socials">
+    <a href="#" data-link="youtube" target="_blank" rel="noopener" aria-label="유튜브">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9L15.5 12z"/></svg>
+    </a>
+    <a href="#" data-link="instagram" target="_blank" rel="noopener" aria-label="인스타그램">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+    </a>
+    <a href="#" data-link="blog" target="_blank" rel="noopener" aria-label="네이버 블로그"><span class="txt">b|</span></a>
+    <a href="#" data-link="place" target="_blank" rel="noopener" aria-label="네이버 플레이스">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    </a>
+  </div>
+
+  <div class="cta">
+    <a class="btn main" href="#" data-link="place" target="_blank" rel="noopener">관리 예약하기</a>
+    <button class="btn sub" id="bizBtn">강의·협업 제안</button>
+  </div>
+
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="text" placeholder="검색어를 입력해주세요. (예: 기미, 모공, 강의)">
+  </div>
+  <div class="empty hide" id="empty">검색 결과가 없어요.</div>
+
+  <!-- 1. 처음 오시는 분 -->
+  <section>
+    <div class="sec-head">
+      <h2>처음 오신다면 <b>필독</b></h2>
+      <p>담토스킨케어 관리 전에 이것만 보세요</p>
+    </div>
+    <div class="grid">
+      <a class="card s" href="#" data-bq="관리" target="_blank" rel="noopener" data-k="관리 메뉴 가격 페이스 바디">
+        <div class="thumb t1"><small>b|</small>관리<br>메뉴</div><div class="label">관리 메뉴 한눈에 보기</div></a>
+      <a class="card s" href="#" data-bq="후기" target="_blank" rel="noopener" data-k="첫 방문 상담 과정 후기">
+        <div class="thumb t2"><small>b|</small>첫<br>방문</div><div class="label">첫 방문 상담 과정</div></a>
+      <a class="card s" href="#" data-link="place" target="_blank" rel="noopener" data-k="오시는 길 위치 주차 검단">
+        <div class="thumb t3"><small>MAP</small>오시는<br>길</div><div class="label">위치 · 주차 안내</div></a>
+    </div>
+  </section>
+
+  <!-- 2. 신비한 피부사전 -->
+  <section>
+    <div class="sec-head">
+      <h2>신비한 <b>피부사전</b></h2>
+      <p>논문으로 풀어보는 피부 이야기 · 숏폼 시리즈</p>
+    </div>
+    <div class="grid">
+      <a class="card s" href="#" data-bq="기미" target="_blank" rel="noopener" data-k="기미 색소침착 EP01">
+        <div class="thumb t5"><small>EP.01</small>기미</div><div class="label">기미는 왜<br>다시 올라올까</div></a>
+      <a class="card s" href="#" data-bq="모공" target="_blank" rel="noopener" data-k="모공 EP02">
+        <div class="thumb t4"><small>EP.02</small>모공</div><div class="label">모공은 정말<br>줄어들까</div></a>
+      <a class="card s" href="#" data-bq="여드름" target="_blank" rel="noopener" data-k="여드름 트러블 EP03">
+        <div class="thumb t2"><small>EP.03</small>여드름</div><div class="label">여드름이<br>생기는 진짜 이유</div></a>
+      <a class="card s" href="#" data-bq="피부장벽" target="_blank" rel="noopener" data-k="피부장벽 장벽 EP04">
+        <div class="thumb t3"><small>EP.04</small>피부<br>장벽</div><div class="label">무너진 장벽<br>되살리기</div></a>
+      <a class="card s" href="#" data-bq="환절기" target="_blank" rel="noopener" data-k="환절기 트러블 EP05">
+        <div class="thumb t1"><small>EP.05</small>환절기</div><div class="label">환절기 트러블<br>대처법</div></a>
+      <a class="card s" href="#" data-bq="자외선" target="_blank" rel="noopener" data-k="겨울 자외선 선크림 EP06">
+        <div class="thumb t6"><small>EP.06</small>겨울<br>자외선</div><div class="label">겨울에도<br>선크림?</div></a>
+    </div>
+  </section>
+
+  <!-- 3. 강의 -->
+  <section>
+    <div class="sec-head">
+      <h2>미용학박사 <b>김혜지</b></h2>
+      <p>대학 강의 · 전문가 과정 · 특강</p>
+    </div>
+    <div class="list">
+      <div class="row s" data-k="대학 강의 유원대 정화예술대 피부미용">
+        <div class="ic t2">U</div><div><h3>대학 강의</h3><p>유원대 · 정화예술대 피부미용 전공</p></div></div>
+      <div class="row s" data-k="경기도 화장품 전문가 과정 을지대 평생교육">
+        <div class="ic t3">P</div><div><h3>전문가 보수교육</h3><p>경기도 화장품 전문가 과정 · 을지대 평생교육원</p></div></div>
+      <div class="row s" data-k="SNS 인플루언서 마케팅 특강">
+        <div class="ic t5">S</div><div><h3>SNS · 인플루언서 마케팅 특강</h3><p>원장님·관리사를 위한 실전 SNS</p></div></div>
+      <div class="row s" data-k="K-Move 캐나다 해외취업 스킨케어">
+        <div class="ic t6">K</div><div><h3>K-Move 캐나다 스킨케어 과정</h3><p>해외 취업 대비 실무 교육</p></div></div>
+    </div>
+  </section>
+
+  <!-- 4. 연구 -->
+  <section>
+    <div class="sec-head">
+      <h2>연구 & <b>논문</b></h2>
+      <p>KCI 등재 논문 14편 이상</p>
+    </div>
+    <div class="list">
+      <div class="row s" data-k="논문 연구 KCI 토픽모델링">
+        <div class="ic t1">R</div><div><h3>KCI 등재 논문 14편+</h3><p>텍스트마이닝 · 토픽모델링 기반 뷰티 연구</p></div></div>
+    </div>
+  </section>
+
+  <!-- 5. About -->
+  <section class="s" data-k="이력 소개 경력 자격 박사">
+    <div class="sec-head"><h2>About</h2><p>이런 사람이 관리합니다</p></div>
+    <ul class="about">
+      <li><b>미용학 박사</b> · 피부관리 경력 16년</li>
+      <li><b>담토스킨케어</b> 대표원장 (인천 검단신도시)</li>
+      <li>유원대 · 정화예술대 등 <b>대학 출강</b></li>
+      <li>캐나다 스파 매니저 · 화장품 개발 경력</li>
+      <li>피부미용사 면허 · 맞춤형화장품조제관리사</li>
+      <li>대한미용학회 등 학술지 <b>논문 심사</b></li>
+    </ul>
+  </section>
+
+  <footer>
+    <b>저는 담토 스킨케어 김혜지였습니다 🤍</b><br>
+    © DAMTO SKINCARE · 인천 서구 검단신도시
+  </footer>
+</div>
+
+<div class="modal" id="modal">
+  <div class="box">
+    <h3>강의 · 협업 제안</h3>
+    <p>강의 출강, 브랜드 협업, 제품 리뷰 제안은<br>아래 연락처로 보내주세요.</p>
+    <div class="item"><span id="mailTxt"></span><button data-copy="mail">복사</button></div>
+    <div class="item"><span>인스타그램 DM</span><button onclick="openLink('instagram')">열기</button></div>
+    <button class="btn main close" id="closeBtn">닫기</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ===== 여기만 바꾸면 전체 링크가 바뀝니다 ===== */
+  const LINKS = {
+    place:     "https://map.naver.com/p/entry/place/1035704495",
+    youtube:   "https://www.youtube.com/@skin_ongjang",
+    instagram: "https://www.instagram.com/damtoskincare",
+    blog:      "https://blog.naver.com/damto_skincare",
+    mail:      "kimhyeji5053@naver.com"
+  };
+  /* ============================================ */
+
+  document.querySelectorAll('[data-link]').forEach(a=>{
+    const v = LINKS[a.dataset.link]; if(v) a.href = v;
+  });
+  // 카드별 키워드 → 블로그/유튜브 내 검색 결과로 연결
+  document.querySelectorAll('[data-bq]').forEach(a=>{
+    a.href='https://blog.naver.com/PostSearchList.naver?blogId=damto_skincare&orderType=sim&searchText='+encodeURIComponent(a.dataset.bq);
+  });
+  document.querySelectorAll('[data-yq]').forEach(a=>{
+    a.href='https://www.youtube.com/@skin_ongjang/search?query='+encodeURIComponent(a.dataset.yq);
+  });
+  document.getElementById('mailTxt').textContent = LINKS.mail;
+
+  const toast = msg=>{const t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');
+    setTimeout(()=>t.classList.remove('on'),1600)};
+  async function copy(text,msg){try{await navigator.clipboard.writeText(text);toast(msg)}catch(e){toast(text)}}
+  function openLink(k){const a=document.createElement('a');a.href=LINKS[k];a.target='_blank';a.rel='noopener';a.click()}
+
+  document.getElementById('shareBtn').onclick=()=>copy(location.href,'링크가 복사됐어요');
+  const modal=document.getElementById('modal');
+  document.getElementById('bizBtn').onclick=()=>modal.classList.add('on');
+  document.getElementById('closeBtn').onclick=()=>modal.classList.remove('on');
+  modal.onclick=e=>{if(e.target===modal)modal.classList.remove('on')};
+  document.querySelector('[data-copy="mail"]').onclick=()=>copy(LINKS.mail,'이메일이 복사됐어요');
+
+  // 검색
+  document.getElementById('q').addEventListener('input',e=>{
+    const q=e.target.value.trim().toLowerCase(); let hit=0;
+    document.querySelectorAll('.s').forEach(el=>{
+      const txt=(el.dataset.k+' '+el.textContent).toLowerCase();
+      const ok=!q||txt.includes(q); el.classList.toggle('hide',!ok); if(ok)hit++;
+    });
+    document.querySelectorAll('section').forEach(sec=>{
+      if(sec.classList.contains('s')) return;
+      const vis=sec.querySelectorAll('.s:not(.hide)').length;
+      sec.classList.toggle('hide',q && !vis);
+    });
+    document.getElementById('empty').classList.toggle('hide',!q||hit>0);
+  });
+</script>
+</body>
+</html>
