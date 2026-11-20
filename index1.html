@@ -97,13 +97,15 @@
   .row p{font-size:12px;color:var(--muted);margin-top:2px}
   .row .arr{margin-left:auto;color:var(--gold);font-size:18px}
 
-  .about{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
-  .about li{list-style:none;font-size:13px;line-height:1.55;padding:7px 0 7px 16px;position:relative;
-            border-bottom:1px dashed var(--line)}
-  .about li:last-child{border:none}
-  .about li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;
+  .about{background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px 18px 12px}
+  .about h4{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.12em;margin:14px 0 2px}
+  .about ul{border-bottom:1px solid var(--line);padding-bottom:6px}
+  .about ul:last-child{border:none}
+  .about li{list-style:none;font-size:13px;line-height:1.55;padding:5px 0 5px 14px;position:relative}
+  .about li::before{content:'';position:absolute;left:0;top:12px;width:5px;height:5px;border-radius:50%;
                     background:var(--gold)}
   .about li b{color:var(--cocoa)}
+  .about li span{color:var(--muted);font-size:11.5px}
 
   .hide{display:none!important}
   .empty{text-align:center;font-size:13px;color:var(--muted);padding:20px 0}
@@ -181,10 +183,10 @@
       <p>담토스킨케어 관리 전에 이것만 보세요</p>
     </div>
     <div class="grid">
-      <a class="card s" href="#" data-bq="관리" target="_blank" rel="noopener" data-k="관리 메뉴 가격 페이스 바디">
-        <div class="thumb t1"><small>b|</small>관리<br>메뉴</div><div class="label">관리 메뉴 한눈에 보기</div></a>
-      <a class="card s" href="#" data-bq="후기" target="_blank" rel="noopener" data-k="첫 방문 상담 과정 후기">
-        <div class="thumb t2"><small>b|</small>첫<br>방문</div><div class="label">첫 방문 상담 과정</div></a>
+      <a class="card s" href="https://blog.naver.com/PostList.naver?blogId=damto_skincare&amp;from=postList&amp;categoryNo=7&amp;parentCategoryNo=7" target="_blank" rel="noopener" data-k="관리 메뉴 가격 페이스 바디">
+        <div class="thumb t1"><small>b|</small>관리<br>메뉴</div><div class="label">피부관리 시술 보기</div></a>
+      <a class="card s" href="https://blog.naver.com/PostList.naver?blogId=damto_skincare&amp;from=postList&amp;categoryNo=4&amp;parentCategoryNo=4" target="_blank" rel="noopener" data-k="첫 방문 상담 과정 후기">
+        <div class="thumb t2"><small>b|</small>첫<br>방문</div><div class="label">담토 소개 · 첫 방문</div></a>
       <a class="card s" href="#" data-link="place" target="_blank" rel="noopener" data-k="오시는 길 위치 주차 검단">
         <div class="thumb t3"><small>MAP</small>오시는<br>길</div><div class="label">위치 · 주차 안내</div></a>
     </div>
@@ -219,8 +221,8 @@
       <p>대학 강의 · 전문가 과정 · 특강</p>
     </div>
     <div class="list">
-      <div class="row s" data-k="대학 강의 유원대 정화예술대 피부미용">
-        <div class="ic t2">U</div><div><h3>대학 강의</h3><p>유원대 · 정화예술대 피부미용 전공</p></div></div>
+      <div class="row s" data-k="대학 강의 명지전문대 백석예술대 세명대 유원대 정화예술대 피부미용">
+        <div class="ic t2">U</div><div><h3>대학 강의</h3><p>명지전문대 · 백석예술대 · 세명대 · 유원대 · 정화예술대</p></div></div>
       <div class="row s" data-k="경기도 화장품 전문가 과정 을지대 평생교육">
         <div class="ic t3">P</div><div><h3>전문가 보수교육</h3><p>경기도 화장품 전문가 과정 · 을지대 평생교육원</p></div></div>
       <div class="row s" data-k="SNS 인플루언서 마케팅 특강">
@@ -243,16 +245,38 @@
   </section>
 
   <!-- 5. About -->
-  <section class="s" data-k="이력 소개 경력 자격 박사">
+  <section class="s" data-k="이력 소개 경력 자격 박사 심사위원 강의 트리콜로지스트 경락">
     <div class="sec-head"><h2>About</h2><p>이런 사람이 관리합니다</p></div>
-    <ul class="about">
-      <li><b>미용학 박사</b> · 피부관리 경력 16년</li>
-      <li><b>담토스킨케어</b> 대표원장 (인천 검단신도시)</li>
-      <li>유원대 · 정화예술대 등 <b>대학 출강</b></li>
-      <li>캐나다 스파 매니저 · 화장품 개발 경력</li>
-      <li>피부미용사 면허 · 맞춤형화장품조제관리사</li>
-      <li>대한미용학회 등 학술지 <b>논문 심사</b></li>
-    </ul>
+    <div class="about">
+      <h4>경력</h4>
+      <ul>
+        <li><b>미용학 박사</b> · 피부관리 경력 16년</li>
+        <li><b>담토스킨케어</b> 대표원장 (인천 검단신도시)</li>
+        <li>캐나다 스파 매니저</li>
+        <li>화장품 제품 개발</li>
+      </ul>
+      <h4>강의</h4>
+      <ul>
+        <li>명지전문대 · 백석예술대 · 세명대 · 유원대 · 정화예술대 <b>출강</b></li>
+        <li>경기도 화장품 전문가 과정 강사</li>
+        <li>을지대학교 평생교육원 강사</li>
+        <li>K-Move 캐나다 스킨케어 과정 강사</li>
+        <li>뷰티 SNS · 인플루언서 마케팅 특강</li>
+      </ul>
+      <h4>연구 · 심사</h4>
+      <ul>
+        <li>KCI 등재 미용 분야 <b>논문 14편+</b></li>
+        <li>미용학회 학술지 <b>논문 심사</b></li>
+        <li>2020 KASF 국제미용기능경기대회 <b>심사위원</b></li>
+        <li>2018 국제미용기능경기대회 <b>심사위원</b></li>
+      </ul>
+      <h4>자격</h4>
+      <ul>
+        <li>피부미용사 국가자격 <span>(한국산업인력공단)</span></li>
+        <li>전신미용관리사 · 미용경락관리사</li>
+        <li>트리콜로지스트 2급</li>
+      </ul>
+    </div>
   </section>
 
   <footer>
